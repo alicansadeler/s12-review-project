@@ -1,8 +1,19 @@
-# React + Vite
+# Sprint 12 Review Week
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Reducer
+Redux
+Async Redux (Thunk)
+Middleware (örn: logger)
+TanStack Query
+localStorage
+custom Hook
+TailwindCSS
+date-fns
+contextAPI
+React Testing Library
+React Hook Form
+Toastify
+Authorization & Authentication
+axios Instance
+HTTP requests
+Deploy
