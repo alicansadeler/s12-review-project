@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Comments from "./pages/Comments";
 import { useContext } from "react";
 import { UserContext } from "./contexts/userContext";
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const { user, darkMode } = useContext(UserContext);
@@ -17,8 +18,8 @@ function App() {
           darkMode ? "dark" : ""
         }`}
       >
-        <div className="left-sidebar w-1/4 bg-slate-100">
-          <p>left</p>
+        <div className="left-sidebar w-1/4 bg-slate-100 flex flex-col justify-end">
+          <p>{user.name}</p>
         </div>
         <main className="w-2/4">
           <Route path="/comments/add">
@@ -37,7 +38,7 @@ function App() {
           </Switch>
         </main>
         <div className="right-sidebar w-1/4 bg-slate-100 dark:bg-red-200">
-          <p>{user.name}</p>
+          <Favorites />
         </div>
       </div>
       <footer className="fixed bottom-0 left-0 right-0 h-12">
