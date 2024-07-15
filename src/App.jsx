@@ -4,11 +4,19 @@ import AddComment from "./components/AddComment";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Comments from "./pages/Comments";
+import { useContext } from "react";
+import { UserContext } from "./contexts/userContext";
 
 function App() {
+  const { user, darkMode } = useContext(UserContext);
+
   return (
     <>
-      <div className="three-column-layout flex w-3/4 m-auto h-screen">
+      <div
+        className={`three-column-layout flex w-3/4 m-auto h-screen ${
+          darkMode ? "dark" : ""
+        }`}
+      >
         <div className="left-sidebar w-1/4 bg-slate-100">
           <p>left</p>
         </div>
@@ -28,8 +36,8 @@ function App() {
             </Route>
           </Switch>
         </main>
-        <div className="right-sidebar w-1/4 bg-slate-100">
-          <p>right</p>
+        <div className="right-sidebar w-1/4 bg-slate-100 dark:bg-red-200">
+          <p>{user.name}</p>
         </div>
       </div>
       <footer className="fixed bottom-0 left-0 right-0 h-12">
