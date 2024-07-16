@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.form-error {
+    @apply border-2 border-red-500 bg-red-200 text-red-500 p-3 rounded-md;
+  }

@@ -7,6 +7,8 @@ import Comments from "./pages/Comments";
 import { useContext } from "react";
 import { UserContext } from "./contexts/userContext";
 import Favorites from "./components/Favorites/Favorites";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { user, darkMode } = useContext(UserContext);
@@ -19,7 +21,7 @@ function App() {
         }`}
       >
         <div className="left-sidebar w-1/4 bg-slate-100 flex flex-col justify-end">
-          <p>{user.name}</p>
+          <p>{user.username}</p>
         </div>
         <main className="w-2/4">
           <Route path="/comments/add">
@@ -49,6 +51,7 @@ function App() {
           <Link to="/comments/add">Add Comments</Link>
         </nav>
       </footer>
+      <ToastContainer />
     </>
   );
 }
