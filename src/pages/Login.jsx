@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { UserContext } from "../contexts/userContext";
-import axios from "axios";
+import { API } from "../api/api";
 
 export default function Login() {
   const {
@@ -21,13 +21,12 @@ export default function Login() {
   const { changeUser } = useContext(UserContext);
 
   const submitFormData = (formData) => {
-    axios
-      .get("https://669617c50312447373c1057a.mockapi.io/api/v1/users", {
-        params: {
-          username: formData.username,
-          password: formData.password,
-        },
-      })
+    API.get("/users", {
+      params: {
+        username: formData.username,
+        password: formData.password,
+      },
+    })
       .then((res) => {
         const user = res.data[0];
         toast(`Merhaba ${user.username}. Tekrar hoş geldin...`, {

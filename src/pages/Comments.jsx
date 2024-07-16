@@ -1,7 +1,10 @@
+import CommentList from "../components/Comments/CommentList";
+
 export default function Comments() {
   return (
     <>
-      <p>Comments</p>
+      <h2>Comments</h2>
+      <CommentList />
     </>
   );
 }
